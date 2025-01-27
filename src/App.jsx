@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Animation from './components/Animation';
 import Contact from './components/Contact';
@@ -8,23 +9,63 @@ import SectionWrapper from './components/SectionWrapper';
 
 import './index.css';
 
+const sectionVariants = (delay = 0) => ({
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: 'easeOut',
+      delay: delay, // Add delay for each section
+    },
+  },
+});
+
 function App() {
   return (
     <div className="h-screen overflow-hidden relative">
       <Navbar />
       <main className="h-[calc(100vh-64px)] overflow-y-auto snap-y snap-mandatory">
         <SectionWrapper id="Animation">
-          <Animation />
+          <motion.div
+            variants={sectionVariants(0.2)} // Delay of 0.2 seconds for the first section
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <Animation />
+          </motion.div>
         </SectionWrapper>
         <SectionWrapper id="Education">
-          <Education />
+          <motion.div
+            variants={sectionVariants(0.4)} // Delay of 0.4 seconds for the second section
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <Education />
+          </motion.div>
         </SectionWrapper>
         <SectionWrapper id="Projects">
-          <Projects />
+          <motion.div
+            variants={sectionVariants(0.6)} // Delay of 0.6 seconds for the third section
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <Projects />
+          </motion.div>
         </SectionWrapper>
-       
         <SectionWrapper id="Contact">
-          <Contact />
+          <motion.div
+            variants={sectionVariants(0.8)} // Delay of 0.8 seconds for the fourth section
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <Contact />
+          </motion.div>
         </SectionWrapper>
       </main>
     </div>
