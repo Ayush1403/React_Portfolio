@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
-import Animation from './components/Animation';
+import Animation from './components/About';
 import Contact from './components/Contact';
 import Education from './components/Education';
 import Projects from './components/Projects';
@@ -27,7 +27,7 @@ function App() {
     <div className="h-screen overflow-hidden relative">
       <Navbar />
       <main className="h-[calc(100vh-64px)] overflow-y-auto snap-y snap-mandatory">
-        <SectionWrapper id="Animation">
+        <SectionWrapper id="About">
           <motion.div
             variants={sectionVariants(0.2)} // Delay of 0.2 seconds for the first section
             initial="hidden"

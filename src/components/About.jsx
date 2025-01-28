@@ -2,7 +2,7 @@ import React from 'react';
 import image from '../assets/download.png';
 import Typed from 'typed.js';
 
-const Animation = () => {
+const About = () => {
   const el = React.useRef(null);
 
   React.useEffect(() => {
@@ -26,9 +26,15 @@ const Animation = () => {
           A passionate <span className='text-[#6C63FF]' ref={el}></span> <br />
           crafting beautiful and functional web experiences.
         </p>
-        <a href="/contact" className="bg-[#6C63FF] text-white w-40 px-4 py-2 rounded-lg">
+        <a href="#Projects">
+      <button className="bg-[#6C63FF] text-white w-40 px-4 py-2 rounded-lg">
+     
+        
           View My Work
-        </a>
+      
+    
+      </button>
+      </a>
       </div>
       <div className='md:w-1/2 sm:w-0 flex justify-center items-center'>
         {/* Hide image when width is <= 632px */}
@@ -42,4 +48,4 @@ const Animation = () => {
   );
 };
 
-export default Animation;
+export default About;
