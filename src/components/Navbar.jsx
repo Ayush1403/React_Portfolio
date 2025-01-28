@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 .hover-target sticky top-0 w-full z-10">
+    <nav className="bg-gray-800 hover-target sticky top-0 w-full z-10">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Name */}
