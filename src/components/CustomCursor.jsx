@@ -4,9 +4,22 @@ import { motion } from "framer-motion";
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(window.innerWidth >= 768); // Check if screen is medium or larger
 
   useEffect(() => {
-    // Track mouse movement
+    const handleResize = () => {
+      setIsVisible(window.innerWidth >= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return; // Skip event listeners for small screens
+
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
@@ -15,10 +28,11 @@ const CustomCursor = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [isVisible]);
 
   useEffect(() => {
-    // Add hover effect to elements with "hover-target" class
+    if (!isVisible) return; // Skip hover effect for small screens
+
     const elements = document.querySelectorAll(".hover-target");
     const handleMouseEnter = () => setHovered(true);
     const handleMouseLeave = () => setHovered(false);
@@ -34,7 +48,7 @@ const CustomCursor = () => {
         el.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
-  }, []);
+  }, [isVisible]);
 
   const cursorVariants = {
     default: {
@@ -52,6 +66,8 @@ const CustomCursor = () => {
       mixBlendMode: "difference", // Apply the negative effect
     },
   };
+
+  if (!isVisible) return null; // Don't render the cursor on small screens
 
   return (
     <motion.div
