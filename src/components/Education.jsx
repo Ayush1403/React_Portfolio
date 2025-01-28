@@ -98,7 +98,7 @@ const Education = () => {
         <div className="sm:hidden relative px-4">
           <div className="overflow-hidden rounded-lg">
             <div 
-              className="flex transition-transform duration-300 ease-in-out"
+              className="flex transition-transform group duration-300 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {educationn.map((education, index) => (
@@ -147,9 +147,9 @@ const Education = () => {
       </div>
 
       {/* Skills section */}
-      <div className="w-full py-10 text-center mt-16">
-        <h1 className="text-4xl font-bold mb-20">Skills</h1>
-        <div className="bg-gray-700 bg-opacity-10 backdrop-blur-lg shadow-2xl overflow-hidden">
+      <div className="w-full py-10 text-center mt-8">
+        <h1 className="text-4xl font-bold mb-8">Skills</h1>
+        <div className="bg-gray-700 bg-opacity-10 backdrop-blur-lg shadow-2xl overflow-hidden px-2">
           <div
             className="flex animate-scroll"
             style={{
@@ -159,16 +159,15 @@ const Education = () => {
             {duplicatedSkills.map((skill, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 px-8"
-                style={{ width: `${100 / skills.length}%` }}
+                className="flex-shrink-0 w-24 sm:w-32 md:w-40 px-2 sm:px-4"
               >
-                <div className="flex flex-col items-center justify-center h-full">
+                <div className="flex flex-col items-center justify-center h-full py-4">
                   <img
                     src={skill.image}
                     alt={skill.name}
-                    className="sm:w-12 md:w-24 md:h-24 sm:h-12 mt-4 mb-4"
+                    className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
                   />
-                
+              
                 </div>
               </div>
             ))}
@@ -187,6 +186,9 @@ const Education = () => {
         }
         .animate-scroll {
           animation: scroll 20s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </section>
