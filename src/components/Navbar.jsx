@@ -27,7 +27,7 @@ const Navbar = () => {
             {sections.map((section) => (
               <li key={section}>
                 <button
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                  className="text-gray-300 hover:text-white  hover:border-b-2 transition-colors duration-200"
                   onClick={() => scrollToSection(section)}
                 >
                   {section}
