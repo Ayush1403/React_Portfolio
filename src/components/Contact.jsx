@@ -37,7 +37,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-800 p-4">
+    <div className="flex hover-target flex-col items-center justify-center min-h-screen bg-gray-800 p-4">
       <div className="max-w-4xl w-full">
  
         <div className="text-center mb-12">

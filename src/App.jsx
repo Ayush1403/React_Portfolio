@@ -1,13 +1,18 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Animation from './components/About';
 import Contact from './components/Contact';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import background from './assets/bavkground.png'
+import CustomCursor from './components/CustomCursor';
 import SectionWrapper from './components/SectionWrapper';
 
 import './index.css';
+
+
 
 const sectionVariants = (delay = 0) => ({
   hidden: { opacity: 0, y: 50 },
@@ -17,14 +22,23 @@ const sectionVariants = (delay = 0) => ({
     transition: {
       duration: 0.8,
       ease: 'easeOut',
-      delay: delay, // Add delay for each section
+      delay: delay, 
     },
   },
 });
 
 function App() {
+
+const backgroundImage = {
+  backgroundImage: `url(${background})`,
+    backgroundSize: 'cover',     
+    backgroundPosition: 'center',  
+    height: '100vh',  
+}
+
   return (
-    <div className="h-screen overflow-hidden relative">
+    <div className="h-screen hover-target overflow-hidden relative" style={backgroundImage}>
+       <CustomCursor />
       <Navbar />
       <main className="h-[calc(100vh-64px)] overflow-y-auto snap-y snap-mandatory">
         <SectionWrapper id="About">

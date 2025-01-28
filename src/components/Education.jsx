@@ -62,7 +62,7 @@ const Education = () => {
   const duplicatedSkills = [...skills, ...skills];
 
   return (
-    <section className="min-h-screen flex flex-col sm:flex-col items-center justify-center text-white">
+    <section className="min-h-screen hover-target flex flex-col sm:flex-col items-center justify-center text-white">
       <div className="text-center h-1/2 w-full">
         <h1 className="text-4xl font-bold mb-8">Education</h1>
         <div className="grid sm:grid-cols-1 bg-opacity-10 lg:grid-cols-3 group gap-8 px-4">
