@@ -123,8 +123,8 @@ const Projects = () => {
                     transition-all duration-700 overflow-hidden mt-40
                     ${isTopCard ? '' : 'blur-sm opacity-70'}
                     hover:blur-none hover:opacity-100
-                    w-[280px] sm:w-[300px] md:w-[400px] lg:w-[2000px]
-                    h-[400px] md:h-[700px]
+                    w-[280px] sm:w-[300px] md:w-[400px] lg:w-[1200px]
+                    h-[400px] md:h-[500px]
                     transform scale-100 hover:scale-105
                   `}
                 >
