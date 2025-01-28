@@ -37,7 +37,7 @@ const backgroundImage = {
 }
 
   return (
-    <div className="h-screen hover-target overflow-hidden relative" style={backgroundImage}>
+    <div className="h-screen  hover-target overflow-hidden relative" style={backgroundImage}>
        <CustomCursor />
       <Navbar />
       <main className="h-[calc(100vh-64px)] overflow-y-auto snap-y snap-mandatory">
