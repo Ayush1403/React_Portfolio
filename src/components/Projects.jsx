@@ -155,15 +155,16 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           className="px-4 md:px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300 text-center text-sm md:text-base"
                         >
-                          View Repository
+                          <button className='text-white'>View Repository</button>
                         </a>
                         <a
                           href={project.websiteLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-4 md:px-6 py-2 bg-gray-600 hover:bg-gray-700 rounded-lg transition-colors duration-300 text-center text-sm md:text-base"
+                          className="px-4 md:px-6 py-2 bg-gray-600 text-amber-100 hover:bg-gray-700 rounded-lg transition-colors duration-300 text-center text-sm md:text-base"
                         >
-                          Live Demo
+                          <button className='text-white'>Live Demo</button>
+                          
                         </a>
                       </div>
                     </div>

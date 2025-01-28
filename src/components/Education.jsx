@@ -45,7 +45,7 @@ const Education = () => {
     { 
       image: 'https://img.icons8.com/color/48/000000/css3.png',
       name: 'CSS', proficiency: 75 },
-    { image: 'https://iconduck.com/icons/28029/tailwind-css',
+    { image: 'https://img.icons8.com/?size=100&id=WoopfRcDj3RF&format=png&color=000000',
        name: 'Tailwind CSS', 
        proficiency: 70 },
     { 
@@ -77,10 +77,11 @@ const Education = () => {
           ))}
         </div>
       </div>
-      <div className="w-full h-1/2 bg-gray-600 my-8"></div>
+      <div className="w-full h-1/2  my-8"></div>
       <div className='w-full py-10 text-center'>
         <h1 className="text-4xl font-bold mb-20">Skills</h1>
-        <div className="bg-gray-700 bg-opacity-30 backdrop-filter backdrop-blur-lg p-6  shadow-lg border border-gray-500 border-opacity-50">
+        <div className="  bg-gray-700 bg-opacity-10 bg-blur-lg 
+                    shadow-2xl  ">
           <motion.div
             className="flex"
             animate={{
@@ -95,7 +96,7 @@ const Education = () => {
             {duplicatedSkills.map((skill, index) => (
               <div key={index} className="flex-shrink-0" style={{ width: `${100 / skills.length}%` }}>
                 <div className="flex flex-col items-center justify-center h-full text-6xl">
-                  <img src={skill.image} alt={skill.name} className="w-24 h-24 mt-4 mb-4" />
+                  <img src={skill.image} alt={skill.name} className="sm:w-12 md:w-24 md:h-24 sm:h-12 mt-4 mb-4" />
                 </div>
               </div>
             ))}
