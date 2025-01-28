@@ -59,10 +59,10 @@ const CustomCursor = () => {
       mixBlendMode: "normal",
     },
     hovered: {
-      x: position.x - 128,
-      y: position.y - 128,
-      width: "256px",
-      height: "256px",
+      x: position.x - 64,
+      y: position.y - 64,
+      width: "128px",
+      height: "128px",
       mixBlendMode: "difference", // Apply the negative effect
     },
   };

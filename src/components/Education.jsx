@@ -62,8 +62,6 @@ const Education = () => {
     },
   ];
 
-  const duplicatedSkills = [...skills, ...skills];
-
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % educationn.length);
   };
@@ -78,7 +76,7 @@ const Education = () => {
         <h1 className="text-4xl font-bold mb-8">Education</h1>
         
         {/* Desktop view */}
-        <div className="hidden sm:grid sm:grid-cols-1 group lg:grid-cols-3 gap-8 px-4">
+        <div className="hidden hover-target sm:grid sm:grid-cols-1 lg:grid-cols-3 gap-8 px-4">
           {educationn.map((education, index) => (
             <div
               key={index}
@@ -98,7 +96,7 @@ const Education = () => {
         <div className="sm:hidden relative px-4">
           <div className="overflow-hidden rounded-lg">
             <div 
-              className="flex transition-transform group duration-300 ease-in-out"
+              className="flex transition-transform duration-300 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {educationn.map((education, index) => (
@@ -117,7 +115,6 @@ const Education = () => {
             </div>
           </div>
 
-          {/* Navigation buttons */}
           <button 
             onClick={prevSlide}
             className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 p-2 rounded-full opacity-75 hover:opacity-100 transition-opacity"
@@ -131,7 +128,6 @@ const Education = () => {
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* Dots indicator */}
           <div className="flex justify-center gap-2 mt-4">
             {educationn.map((_, index) => (
               <button
@@ -146,51 +142,23 @@ const Education = () => {
         </div>
       </div>
 
-      {/* Skills section */}
-      <div className="w-full py-10 text-center mt-8">
-        <h1 className="text-4xl font-bold mb-8">Skills</h1>
-        <div className="bg-gray-700 bg-opacity-10 backdrop-blur-lg shadow-2xl overflow-hidden px-2">
-          <div
-            className="flex animate-scroll"
-            style={{
-              animation: 'scroll 20s linear infinite',
-            }}
-          >
-            {duplicatedSkills.map((skill, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-24 sm:w-32 md:w-40 px-2 sm:px-4"
-              >
-                <div className="flex flex-col items-center justify-center h-full py-4">
-                  <img
-                    src={skill.image}
-                    alt={skill.name}
-                    className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
-                  />
-              
-                </div>
-              </div>
-            ))}
+     
+      <div className="w-full  flex-col text-center mt-8">
+        <h1 className="text-4xl font-bold mb-4">Skills</h1>
+     
+          <div className="grid grid-rows-2 sm:grid-cols-2 lg:grid-cols-4 gap-1 p-2 justify-center items-center">
+          {skills.map((skill,index)=>(
+            <div  key={index}
+            className=" flex hover-target  w-40 bg-white/20 bg-opacity-50 backdrop-blur-lg  h-40 flex-col p-4 justify-center items-center m-4 rounded-lg shadow-md">
+              <img src={skill.image} alt="" />
+              <h1>{skill.name}</h1>
+            </div>
+          ))}
           </div>
         </div>
-      </div>
+      
 
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-scroll {
-          animation: scroll 20s linear infinite;
-        }
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+    
     </section>
   );
 };
