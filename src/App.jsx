@@ -5,7 +5,7 @@ import Animation from './components/About';
 import Contact from './components/Contact';
 import Education from './components/Education';
 import Projects from './components/Projects';
-import Skills from './components/Skills';
+import Skills from './components/Footer';
 import background from './assets/bavkground.png'
 import CustomCursor from './components/CustomCursor';
 import SectionWrapper from './components/SectionWrapper';
