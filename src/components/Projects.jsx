@@ -93,7 +93,7 @@ const Projects = () => {
         </button>
 
         {/* Title */}
-        <h1 className="text-center pt-4 md:pt-8 text-3xl md:text-4xl font-bold text-white">
+        <h1 className="text-start ml-20 pt-4 md:pt-8 text-3xl md:text-7xl font-bold text-white">
           Projects
         </h1>
 
@@ -120,17 +120,17 @@ const Projects = () => {
                   className={`
                     bg-gray-700 bg-opacity-30 backdrop-blur-lg rounded-xl 
                     shadow-2xl border border-gray-500 border-opacity-50
-                    transition-all duration-700 overflow-hidden
+                    transition-all duration-700 overflow-hidden mt-40
                     ${isTopCard ? '' : 'blur-sm opacity-70'}
                     hover:blur-none hover:opacity-100
-                    w-[280px] sm:w-[340px] md:w-[600px] lg:w-[900px]
-                    h-[400px] md:h-[400px]
+                    w-[280px] sm:w-[300px] md:w-[400px] lg:w-[2000px]
+                    h-[400px] md:h-[700px]
                     transform scale-100 hover:scale-105
                   `}
                 >
                   <div className="h-full w-full flex flex-col lg:flex-row">
                     {/* Image */}
-                    <div className="lg:w-1/2 h-48 lg:h-full">
+                    <div className="lg:w-3/4 h-48 lg:h-full">
                       <img
                         className="w-full h-full object-cover"
                         src={project.image}
@@ -139,7 +139,7 @@ const Projects = () => {
                     </div>
 
                     {/* Content */}
-                    <div className="lg:w-1/2 p-4 md:p-6 flex flex-col justify-between flex-grow">
+                    <div className="lg:w-3/4 p-4 md:p-6 flex flex-col justify-between flex-grow">
                       <div>
                         <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-white">{project.title}</h3>
                         <p className="text-gray-300 text-sm md:text-base line-clamp-4 md:line-clamp-none mb-4 md:mb-6">
