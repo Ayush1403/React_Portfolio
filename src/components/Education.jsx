@@ -76,7 +76,7 @@ const Education = () => {
         <h1 className="text-4xl font-bold mb-8">Education</h1>
         
         {/* Desktop view */}
-        <div className="hidden hover-target sm:grid sm:grid-cols-1 lg:grid-cols-3 gap-8 px-4">
+        <div className="hidden group hover-target sm:grid sm:grid-cols-1 lg:grid-cols-3 gap-8 px-4">
           {educationn.map((education, index) => (
             <div
               key={index}
@@ -146,12 +146,12 @@ const Education = () => {
       <div className="w-full  flex-col text-center mt-8">
         <h1 className="text-4xl font-bold mb-4">Skills</h1>
      
-          <div className="grid grid-rows-2 sm:grid-cols-2 lg:grid-cols-4 gap-1 p-2 justify-center items-center">
+          <div className="flex justify-center items-center">
           {skills.map((skill,index)=>(
             <div  key={index}
-            className=" flex hover-target  w-40 bg-white/20 bg-opacity-50 backdrop-blur-lg  h-40 flex-col p-4 justify-center items-center m-4 rounded-lg shadow-md">
+            className=" flex hover-target  w-26 bg-white/20 bg-opacity-50 backdrop-blur-lg  h-26 flex-col p-4 justify-center items-center m-4 rounded-lg shadow-md">
               <img src={skill.image} alt="" />
-              <h1>{skill.name}</h1>
+            
             </div>
           ))}
           </div>
